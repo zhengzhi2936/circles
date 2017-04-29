@@ -2,8 +2,13 @@ Rails.application.routes.draw do
 
   root 'welcome#index'
 
-  resources :users
+  resources :users do
+    get :blogs, on: :member
+  end
+
   resources :sessions
+
+  resources :blogs
 
   namespace :admin do
     root 'users#index'
