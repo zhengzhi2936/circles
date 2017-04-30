@@ -21,6 +21,15 @@ module Circles
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
 
+    config.action_mailer.smtp_settings = {
+     :address => "smtp.example.com",
+     :port => 25,
+     :domain => "343edu.com",
+     :user_name => "username",
+     :password => "password",
+     :authentication => :login,
+     :enable_starttls_auto => false
+   }
     config.generators do |generator|
       generator.assets false
       # generator.view_specs false
